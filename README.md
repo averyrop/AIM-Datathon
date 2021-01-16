@@ -1,15 +1,12 @@
-# AIM-Datathon
-Summary of redone work done after AIM Datathon Nov. 2020
-
 ## Project Title: Roswell Park's DBBR Cancer Patient Survival Prediction Team #5
 
-Team Members: Avery Roper and Ophelia Morey.
+Team Members: Avery Roper
 
 Link to AIM Datathon: https://www.kaggle.com/c/aimdatathon2020/leaderboard <br>
 Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing
 ### Contents
 
-* [Problem]
+* [Problem] #(Problem)
 * [Solution]
 * [ML Pipeline]
 * [Data Management]
