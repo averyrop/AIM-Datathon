@@ -64,7 +64,7 @@ Revised model preprocessing.
 #### Study-Design/ Exploratory Analysis
 The clinical goal of this analysis was prediction of cancer patient survival. In the pursuit of this, the nearly 1200 pieces of data surrounding every patient were provided. This is too many to explore all of, but an exploration of some of these variables will be performed here to show the design, biases, and implications of this study.
 
-
+![Survival image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/Survival%20pie.png)
 
 
 
