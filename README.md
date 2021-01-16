@@ -76,53 +76,65 @@ This image shows the races used in this study. Race 1 is the stand in for white,
 
 ![Race image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/Race%20pie.png)
 
-The last variable shows annual incomes of patients split based on patient survival. The phenomenon seen in the age histogram is not seen here. For patients who make under 50k per year, the red line is higher than or even with the the blue line, while with the patients who make above 50k the blue line is much higher. This suggests that income has some relation to the survival status.
+The last variable shows annual incomes of patients split based on patient survival. The phenomenon seen in the age histogram is not seen here. For patients who make under 25k per year, the red line is higher than or even with the the blue line, while with the patients who make above 25k the blue line is much higher. This suggests that income has some relation to the survival status.
 
 ![Income image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/Income%20hist.png)
 
 
 
 #### Validation-Strategies 
-Refer to Train and Test Data Pre-processing, Training/Validation Split subtitles in the [Google Collab notebook](https://colab.research.google.com/drive/1GFtlNPVoSZ1RHcb2DvUzaLY8mEgdqeAV?usp=sharing) for more detail. 
 
--Train and Test Data Pre-processing
-1) Encoding Categorical COlums. 2) Fill NaNs. 3) Drop columns.
+Recursive feature elimination with cross validation (RFECV) was used to tune the model. While this may seem to be better suited to be in the model tuning section, it is also related to the test train split. The entire class associated set of 1600 patients were taken for the model. 80% of these were then chosen as a training set (1280). This training set was then used with RFECV and random forests to eliminate unimportant columns from the dataframe fed in. RFECV used cross validation to split the training set into 5 subsets. A model was trained using 4 of the subsets in a random forest and was then checked for accuracy on the 5th subset. This was repeated until every subset got a turn to be the accuracy check set, and then all of the accuracies were averaged. This whole process was then repeated after eliminating 25 columns that were deemed unimportant. This process started at about 1000 columns and was then repeated until about 500 columns remained, all deemed to be important. This was based on the subsequent accuracies of the cross validations reaching an optimal number. 
 
--Training/Validation Split
-80 % - 20 %  Split was used.
+So to summarize there are 5 different cross validating sub-training sets, followed by a training set of 1280 used to train the model, followed by an overall training set of 1600, which are the patients which our team was provided class labels for. Similarly there are also 5 cross validating test subsets, followed by a test set of 320 to test the model on, followed by the overall test set of 400 un class labeled patients, which are used to score the kaggle submission in the end.
 
 #### Model-Training_and_Tuning
-Refer to Logistic Regression and XGBoost subtitles in the [Google Collab notebook](https://colab.research.google.com/drive/1GFtlNPVoSZ1RHcb2DvUzaLY8mEgdqeAV?usp=sharing) for more detail. 
-Hyperparameters
-Tuning
+
+A random forest model was used for the patient status predictions. This random forest used 200 trees with a max depth of 3. While this was a somewhat lower amount than I might usually use, the accuracy presented at the end was good enough that I feel it was okay, since increasing the number of trees and the depth would have increased the amount of time to wait for the results.
+
+Here I will also discuss the strategy revision from the initial version of team 5's project from November to now. Back in November A decision tree was used alongside boosting to predict the patient outcomes. During the initial attempt the school year was still going, so I was still experimenting with new methods. The decision tree was chosen for it's interpretability and the boosting was chosen for acurracy. best subset selection was also used, on the basis of a chi squared test. This time only a random forest was done alongside the RFECV explained in the last section. The decision tree was omitted as random forest typically has better accuracy. Random forest was chosen instead of boosting somewhat on a whim. They both have comparable accuracy, but the boosting builds on itself to better predict the harder samples that previous trees in the ensemble couldn't predict. In comparison the random forest just randomly uses a subset of features in each tree in the ensemble to predict the outcome. The decision was made based on 
+
+1. The fact that I was subconciously afraid that the boosting model might overfit just a bit more than the random forest would, even though they're robust against overfitting
+2. The fact that I recently used boosting in a different project and wanted to showcase a different technique here.
+3. I felt that a random selection of features might give a more unbiased feature importance than seeking out features that are useful in predicting hard patients. I guess this is what I mean by the overfitting in 1.
+
+Since they both have similar accuracy I figured that these reasons were good enough to choose one over the other.
 
 #### Results_Model-Performance_and_Interpretability
-Refer to Results,.... subtitles in the [Google Collab notebook](https://colab.research.google.com/drive/1GFtlNPVoSZ1RHcb2DvUzaLY8mEgdqeAV?usp=sharing) for more detail. 
 
--Include Summary of Results/Discussion and Picture of Results here.
+The results of RFECV random forest model were tested on set aside test set of 320 patients. The ROC_AUC score, the ROC curve, and a confusion matrix will be shown to illustrate the results. For interpretability, the variables/ questions associated with them that were selected by the feature selection will be summarized. A somewhat fuller account can be seen by visiting the colab, link mentioned earlier.
 
+The internal ROC AUC score (Calculated based on my set aside test set of 320) was .76. 
 
--Logistic Regression
+The AUC score is related to the numbers of true and false positives and negatives in the predicted data. The confusion matrix looks like this:
 
-![Image](https://github.com/aimsymposium/Project-sample/blob/main/LogisiticRegression.PNG)
+_____________
+|  42  | 76  |
+_____________
+|  14  |188  |
+_____________
 
-A
-B
-C
-D
+More numbers along the diagonal is good, and this is another way to look at/ interpret the ROC AUC score given above.
+The actual ROC curve is shown here
 
--XGBoost
+![ROC image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/datathon%20ROC%20curve.png)
 
-![Image](https://github.com/aimsymposium/Project-sample/blob/main/XGBoost.PNG)
+The closer this curve is to hugging the left wall and ceiling, the better the score is, while appearing as a diagonal line from bottom left to top right is bad.
 
-A
-B
-C
-D
+The questions used to diagnose the survival can be grouped into the following categiries:
+
+1. General Nutrition (e.g. Fruits and vegetables per week, fried food frequency)
+2. Smoking (e.g. Cigarettes per day, brand smoked)
+3. Medications (ibuprofen, antacids)
+4. Misc (e.g. age diagnosed, lithocode, workout, income)
+
+While this is a very broad approximation, there were around 230 features deemed important, so I can't summarize them all here. Again, the google collab can be referenced,
+and the important features can be seen in the feature importance section
+
 
 #### Conclusion
 
-XGBoost accuracy on test dataset was 76.9%.
+In conclusion, the final accuracy of this redone late submission on the public leaderbord was .75703. This can not be verified anywhere as it's not recorded since it was late, but I have nothing to gain from lying about it.
 
 #### Solution-Video
 
