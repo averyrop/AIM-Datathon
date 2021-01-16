@@ -1,28 +1,28 @@
 # AIM-Datathon
-Summary of work done during AIM Datathon Nov. 2020
+Summary of redone work done after AIM Datathon Nov. 2020
 
-## Project Title: Predicting Patient survival with Random Forest
+## Project Title: Roswell Park's DBBR Cancer Patient Survival Prediction Team #5
 
 Team Members: Avery Roper and Ophelia Morey.
 
 Link to AIM Datathon: https://www.kaggle.com/c/aimdatathon2020/leaderboard <br>
-Link to Google Collab Notebook: https://colab.research.google.com/drive/1GFtlNPVoSZ1RHcb2DvUzaLY8mEgdqeAV?usp=sharing
+Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing
 ### Contents
 
-* [Problem](#Problem)
-* [Solution](#Solution) (Clinical Revelance of the Model)
-* [ML Pipeline](#ML-Pipeline)
-* [Data Management](#Data-Management)
-* [Study Design](#Study-Design)
-* Exploratory Analysis (add if applicable)
-* [Validation Strategies (Train and Test Data Pre-processing, Training/Validation Split)](#Validation-Strategies)
-* Feature Engineering (add if applicable)
-* [Model Training,Tuning (Logistic Regression, XGBoost, AUC performance metric)](#Model-Training_and_Tuning)
-* [Results,Model Performance,Interpretability](#Results_Model-Performance_and_Interpretability)
-* [Conclusion](#Conclusion)
-* [Solution Video](#Solution-Video)
+* [Problem]
+* [Solution]
+* [ML Pipeline]
+* [Data Management]
+* [Study Design]
+* Exploratory Analysis 
+* [Validation Strategies (Train and Test Data Pre-processing, Training/Validation Split)]
+* Feature Engineering 
+* [Model Training,Tuning (Random Forest/ RFECV)]
+* [Results,Model Performance,Interpretability]
+* [Conclusion]
+* [Solution Video]
   * Link a short video (unlisted Youtube link) that walks through your approach from github and code from google collab.
-* [Acknowledgments](#acknowledgments)
+* [Acknowledgments]
 
 #### Problem
 -  Provided with the dataset from the Roswell Park DataBank and BioRepository Shared Resource, we teams were tasked with predicting patient survival outcomes.
@@ -31,26 +31,6 @@ Link to Google Collab Notebook: https://colab.research.google.com/drive/1GFtlNPV
 - In the initial attempt during the event, decision trees, subset selection, and boosting were used to attempt to predict the patient outcomes in R, and to identify important features in this prediction. Looking back on it the attempt was amateurish, so a revised version of the modeling was done in python using cross validated recursive feature elimination and random forests. The updated version achieves a much higher accuracy and about 500 important variables.
 
 #### ML-Pipeline
-
-- The ML workflow used in the initial model is as follows:
-1. Import all data
-2. Combine all data into one dataframe
-3. Unify some occupation names, so model later on doesn't complain
-4. Fit decsion tree to data
-5. Check for complexity/ accuracy tradeoff
-6. Prune decision tree
-7. Identify important variables based on variable importance returned
-8. Train new tree using important variables
-9. accuracy tradeoff
-10. Prune
-11. Predict non class provided data using pruned tree
-12. Print submission
-13. Restart from step 3 for new boosting model
-14. Eliminate homogeneous columns
-15. train boosting model
-16. Predict unclassified data on boosting model
-17. Print submission
-
 
 - The ML workflow used in the revised model is as follows:
 1. Import all data
@@ -67,11 +47,11 @@ Link to Google Collab Notebook: https://colab.research.google.com/drive/1GFtlNPV
 12. Save predictions as a submission file
 13. Identify important variables based on those used in RFECV model
 
-- Add a link to your code(Google Colab). Refer to this [sample notebook](https://colab.research.google.com/drive/1GFtlNPVoSZ1RHcb2DvUzaLY8mEgdqeAV?usp=sharing) for further details.
-#### Data-Management
-- Data Pre-processing/ Cleansing/Transformations(Changing column names, Merging different data sources, etc). 
+Link to Google Colab: https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing
 
-Revised model preprocessing. Inital models won't be mentioned, as it was already discusse din ML workflow, and it's similar to revised model
+#### Data-Management
+
+Revised model preprocessing.
 
 1. Change all columns to uppercase 
 2. Merge all columns. 
@@ -83,7 +63,9 @@ Revised model preprocessing. Inital models won't be mentioned, as it was already
 8. Eliminate homogeneous columns (too many of the same answer)
 
 #### Study-Design
-The clinical goal of this analysis was prediction of cancer patient survival. In the pursuit of this, the nearly 1200 pieces of data surrounding every patient were narrowed down to about 500 during feature selection. While this is much less, it's still too many to provide information about. As such, a curated exploration of the statstics surroundinf these important features will be performed here.
+The clinical goal of this analysis was prediction of cancer patient survival. In the pursuit of this, the nearly 1200 pieces of data surrounding every patient were provided. This is too many to explore all of, but an exploration of some of these variables will be performed here to show the design, biases, and implications of this study.
+
+
 
 
 
