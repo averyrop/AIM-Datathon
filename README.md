@@ -7,18 +7,17 @@ Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5
 ### Contents
 
 * [Problem](#problem)
-* [Solution]
-* [ML Pipeline]
-* [Data Management]
-* [Study Design]/ Exploratory Analysis 
-* [Validation Strategies (Train and Test Data Pre-processing, Training/Validation Split)]
-* Feature Engineering 
-* [Model Training,Tuning (Random Forest/ RFECV)]
-* [Results,Model Performance,Interpretability]
-* [Conclusion]
-* [Solution Video]
+* [Solution](#solution)
+* [ML Pipeline](#ml-pipeline)
+* [Data Management](#data-management)
+* [Study Design/Exploratory Analysis](#Study-Design/-Exploratory Analysis) 
+* [Validation Strategies (Train and Test Data Pre-processing, Training/Validation Split)](#Validation-Strategies)
+* [Model Training,Tuning (Random Forest/ RFECV)](#Model-Training_and_Tuning)
+* [Results,Model Performance,Interpretability](#Results_Model-Performance_and_Interpretability)
+* [Conclusion](#Conclusion)
+* [Solution Video](#Solution-Video)
   * Link a short video (unlisted Youtube link) that walks through your approach from github and code from google collab.
-* [Acknowledgments]
+
 
 #### Problem
 -  Provided with the dataset from the Roswell Park DataBank and BioRepository Shared Resource, we teams were tasked with predicting patient survival outcomes.
@@ -137,5 +136,3 @@ In conclusion, the final accuracy of this redone late submission on the public l
 
 [![Watch the video](https://github.com/aimsymposium/Project-sample/raw/main/video.png)](https://youtu.be/vOgCOoy_Bx0)
 
-
-#### Acknowledgments
