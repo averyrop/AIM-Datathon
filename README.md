@@ -10,7 +10,7 @@ Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5
 * [Solution](#solution)
 * [ML Pipeline](#ml-pipeline)
 * [Data Management](#data-management)
-* [Study Design/Exploratory Analysis](#Study-Design/-Exploratory-Analysis) 
+* [Study Design](#Study-Design) 
 * [Validation Strategies (Train and Test Data Pre-processing, Training/Validation Split)](#Validation-Strategies)
 * [Model Training,Tuning (Random Forest/ RFECV)](#Model-Training_and_Tuning)
 * [Results,Model Performance,Interpretability](#Results_Model-Performance_and_Interpretability)
@@ -57,7 +57,7 @@ Revised model preprocessing.
 7. Scale all columns, now numerical (subtract mean and divide by standard deviation)
 8. Eliminate homogeneous columns (too many of the same answer)
 
-#### Study-Design/ Exploratory Analysis
+#### Study-Design
 The clinical goal of this analysis was prediction of cancer patient survival. In the pursuit of this, the nearly 1200 pieces of data surrounding every patient were provided. This is too many to explore all of, but an exploration of some of these variables will be performed here to show the design, biases, and implications of this study. Only the data with the classes associated are explored, as these are the samples that influence the creation of the model.
 
 The first variable explored is the patient survival itself. As can be seen in the pie chart below, 60% of the patients survived, meaning that if there are no other factors interacting, when exploring other variables, We should see that same 60:40 split when splitting the variable based on survival
