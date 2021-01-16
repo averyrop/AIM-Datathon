@@ -6,7 +6,7 @@ Link to AIM Datathon: https://www.kaggle.com/c/aimdatathon2020/leaderboard <br>
 Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing
 ### Contents
 
-* [Problem] #problem
+* [Problem](#problem)
 * [Solution]
 * [ML Pipeline]
 * [Data Management]
