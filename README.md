@@ -10,7 +10,7 @@ Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5
 * [Solution](#solution)
 * [ML Pipeline](#ml-pipeline)
 * [Data Management](#data-management)
-* [Study Design/Exploratory Analysis](#Study-Design/-Exploratory Analysis) 
+* [Study Design/Exploratory Analysis](#Study-Design/-Exploratory-Analysis) 
 * [Validation Strategies (Train and Test Data Pre-processing, Training/Validation Split)](#Validation-Strategies)
 * [Model Training,Tuning (Random Forest/ RFECV)](#Model-Training_and_Tuning)
 * [Results,Model Performance,Interpretability](#Results_Model-Performance_and_Interpretability)
