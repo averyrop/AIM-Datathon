@@ -1,4 +1,4 @@
-## Project Title: Roswell Park's DBBR Cancer Patient Survival Prediction Team #5
+## Project Title: Roswell Park's DBBR Cancer Patient Survival Prediction
 
 Team Members: Avery Roper
 
