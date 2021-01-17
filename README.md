@@ -82,6 +82,8 @@ This image shows the races used in this study. Race 1 is the stand in for white,
 
 
 #### Figure D ####
+
+##### Income Breakdown #####
 ![Income image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/Income%20hist.png)
 
 The last variable shows annual incomes of patients split based on patient survival. The phenomenon seen in the age histogram is not seen here. For patients who make under 25k per year, the red line is higher than or even with the the blue line, while with the patients who make above 25k the blue line is much higher. This suggests that income has some relation to the survival status.
