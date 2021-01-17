@@ -16,7 +16,6 @@ Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5
 * [Results,Model Performance,Interpretability](#Results_Model-Performance_and_Interpretability)
 * [Conclusion](#Conclusion)
 * [Solution Video](#Solution-Video)
-  * Link a short video (unlisted Youtube link) that walks through your approach from github and code from google collab.
 
 
 #### Problem
@@ -154,5 +153,4 @@ In conclusion, the final accuracy of this redone late submission on the public l
 
 #### Solution-Video
 
-[![Watch the video](https://github.com/aimsymposium/Project-sample/raw/main/video.png)](https://youtu.be/vOgCOoy_Bx0)
-
+Roswell Park's DBBR Cancer Patient Survival Prediction Video Link: [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO)
