@@ -66,16 +66,22 @@ Revised model preprocessing.
 The clinical goal of this analysis was prediction of cancer patient survival. In the pursuit of this, the nearly 1200 pieces of data surrounding every patient were provided. This is too many to explore all of, but an exploration of some of these variables will be performed here to show the design, biases, and implications of this study. Only the data with the classes associated are explored, as these are the samples that influence the creation of the model.
 
 #### Figure A ####
+
+##### Survival Breakdown #####
 ![Survival image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/Survival%20pie.png)
 
 The first variable explored is the patient survival itself. As can be seen in the pie chart below, 60% of the patients survived, meaning that if there are no other factors interacting, when exploring other variables, We should see that same 60:40 split when splitting the variable based on survival
 
 #### Figure B ####
+
+##### Age Breakdown #####
 ![Age image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/Age%20hist.png)
 
 The next variable explored is age. The 60:40 split can be seen here between the red and the blue, as the blue bars look basically like the red bars, just about 1.5x times taller. This shows that age is not visually noticeable for the most part as indicator of patient survival. It also shows that an approximately normal distribution of patient ages were acquired with a mean of about 62.
 
 #### Figure C ####
+
+##### Race Breakdown #####
 ![Race image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/Race%20pie.png)
 
 This image shows the races used in this study. Race 1 is the stand in for white, and race 2 is the stand in for black. The others are translated in the google collab, but aren't really  necessary here to point out that a vast majority of the patients used in this study were white. As a result the results are not necessarily applicable to patients of different races. We also won't really be able to tell if race helps predict the survival status, as theres not enough data about other races to make an informed decision.
@@ -125,6 +131,9 @@ The internal ROC AUC score (Calculated based on my set aside test set of 320) wa
 The AUC score is related to the numbers of true and false positives and negatives in the predicted data. The confusion matrix looks like this:
 
 
+#### Figure E ####
+
+##### Confusion Matrix #####
 Confusion     | Matrix
 ------------- | -------------
    42         |      76
@@ -134,6 +143,9 @@ Confusion     | Matrix
 More numbers along the diagonal is good, and this is another way to look at/ interpret the ROC AUC score given above.
 The actual ROC curve is shown here
 
+#### Figure F ####
+
+##### ROC curve #####
 ![ROC image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/datathon%20ROC%20curve.png)
 
 The closer this curve is to hugging the left wall and ceiling, the better the score is, while appearing as a diagonal line from bottom left to top right is bad.
