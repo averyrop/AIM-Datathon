@@ -27,20 +27,7 @@ Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5
 
 #### ML-Pipeline
 
-- The ML workflow used in the revised model is as follows:
-1. Import all data
-2. Combine all data into one dataframe
-3. Eliminate columns of responses that are unanswered by a majority of people
-4. For columns answered by most people, fill unanswered rows with most common answer, so model can read data
-5. Encode non- numerical answers to be readable by computer
-6. Scale all columns/ responses to be readable by computer
-7. Remove columns that are dominated by one answer, since common answer won't provide variety for prediction  (e.g. if 99% of respondents say they are male)
-8. Split all data with patient survival provided into test and training
-9. Train recursive cross validated feature elimination (RFECV) algorithm on training data, using random forest with 200 trees to predict outcome
-10. Test RFECV model on test set
-11. Use RFECV model to predict data where class is not provided
-12. Save predictions as a submission file
-13. Identify important variables based on those used in RFECV model
+![Pipe image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/MLpipeline%20(2).png)
 
 Link to Google Colab: https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing
 
