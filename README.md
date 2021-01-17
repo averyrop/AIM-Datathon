@@ -11,7 +11,7 @@ Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5
 * [ML Pipeline](#ml-pipeline)
 * [Data Management](#data-management)
 * [Study Design](#Study-Design) 
-* [Validation Strategies (Train and Test Data Pre-processing, Training/Validation Split)](#Validation-Strategies)
+* [Validation Strategies (Train and Test Data Pre-processing, Training/Validation Split)](#Test-Train-Validation-Strategies)
 * [Model Training,Tuning (Random Forest/ RFECV)](#Model-Training_and_Tuning)
 * [Results,Model Performance,Interpretability](#Results_Model-Performance_and_Interpretability)
 * [Conclusion](#Conclusion)
@@ -46,6 +46,8 @@ Link to Google Colab: https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6m
 
 #### Data-Management
 
+[Link](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=mMZZXXuhVyok)
+
 Revised model preprocessing.
 
 1. Change all columns to uppercase 
@@ -58,6 +60,9 @@ Revised model preprocessing.
 8. Eliminate homogeneous columns (too many of the same answer)
 
 #### Study-Design
+
+[Link](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=2u5ybW9ROhRy)
+
 The clinical goal of this analysis was prediction of cancer patient survival. In the pursuit of this, the nearly 1200 pieces of data surrounding every patient were provided. This is too many to explore all of, but an exploration of some of these variables will be performed here to show the design, biases, and implications of this study. Only the data with the classes associated are explored, as these are the samples that influence the creation of the model.
 
 The first variable explored is the patient survival itself. As can be seen in the pie chart below, 60% of the patients survived, meaning that if there are no other factors interacting, when exploring other variables, We should see that same 60:40 split when splitting the variable based on survival
@@ -78,13 +83,17 @@ The last variable shows annual incomes of patients split based on patient surviv
 
 
 
-#### Validation-Strategies 
+#### Test-Train-Validation-Strategies 
+
+[Link](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=uu4SxE7ZDUW3)
 
 Recursive feature elimination with cross validation (RFECV) was used to tune the model. While this may seem to be better suited to be in the model tuning section, it is also related to the test train split. The entire class associated set of 1600 patients were taken for the model. 80% of these were then chosen as a training set (1280). This training set was then used with RFECV and random forests to eliminate unimportant columns from the dataframe fed in. RFECV used cross validation to split the training set into 5 subsets. A model was trained using 4 of the subsets in a random forest and was then checked for accuracy on the 5th subset. This was repeated until every subset got a turn to be the accuracy check set, and then all of the accuracies were averaged. This whole process was then repeated after eliminating 25 columns that were deemed unimportant. This process started at about 1000 columns and was then repeated until about 500 columns remained, all deemed to be important. This was based on the subsequent accuracies of the cross validations reaching an optimal number. 
 
 So to summarize there are 5 different cross validating sub-training sets, followed by a training set of 1280 used to train the model, followed by an overall training set of 1600, which are the patients which our team was provided class labels for. Similarly there are also 5 cross validating test subsets, followed by a test set of 320 to test the model on, followed by the overall test set of 400 un class labeled patients, which are used to score the kaggle submission in the end.
 
 #### Model-Training_and_Tuning
+
+[Link](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=MT5GcIpH4GdA)
 
 A random forest model was used for the patient status predictions. This random forest used 200 trees with a max depth of 3. While this was a somewhat lower amount than I might usually use, the accuracy presented at the end was good enough that I feel it was okay, since increasing the number of trees and the depth would have increased the amount of time to wait for the results.
 
@@ -98,17 +107,20 @@ Since they both have similar accuracy I figured that these reasons were good eno
 
 #### Results_Model-Performance_and_Interpretability
 
+[Link](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=9Avhzg93Dxvg)
+
 The results of RFECV random forest model were tested on set aside test set of 320 patients. The ROC_AUC score, the ROC curve, and a confusion matrix will be shown to illustrate the results. For interpretability, the variables/ questions associated with them that were selected by the feature selection will be summarized. A somewhat fuller account can be seen by visiting the colab, link mentioned earlier.
 
 The internal ROC AUC score (Calculated based on my set aside test set of 320) was .76. 
 
 The AUC score is related to the numbers of true and false positives and negatives in the predicted data. The confusion matrix looks like this:
 
-_____________
-|  42  | 76  |
-_____________
-|  14  |188  |
-_____________
+
+Confusion     | Matrix
+------------- | -------------
+   42         |      76
+   14         |     188
+   
 
 More numbers along the diagonal is good, and this is another way to look at/ interpret the ROC AUC score given above.
 The actual ROC curve is shown here
