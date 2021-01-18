@@ -148,19 +148,19 @@ A decision tree was grown and pruned using the training data.
 
 #### Figure E ####
 
-[Python unpruned](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/unpruned%20python%20tree.png)
+![Python unpruned](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/unpruned%20python%20tree.png)
 
 Figure E shows the unpruned tree. There are too many branches to try to make any sense of it, and it wouldn't be prudent to try as in it's current state it overfits the data
 
 #### Figure F ####
 
-[python cp](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/aim%20python%20cp%20%20pruning.png)
+![python cp](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/aim%20python%20cp%20%20pruning.png)
 
 Cp values are plotted against accuracies in figure F in order to see how many branches we should trim in order to receive as high accuracy as we can while also making the plot as readable as possible. Higher cps mean simpler models
 
 #### Figure G ####
 
-[Python pruned](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/pruned%20aim%20tree.png)
+![Python pruned](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/pruned%20aim%20tree.png)
 
 Figure G shows the new pruned model. It is a lot more manageable than the unpruned version. The variables deemed important are: 
 'BETA-CRYPTOXANTHIN','XDAYS45','ACTLDAYS','VB12DOS','BBPSYRES','DSODASV','AGESTART','AGEQUIT','BRND1TAR','BRND2FIL','MILKC','DOBYEAR','HHINC','SEERSUMMSTAGE2000_x'.
@@ -174,49 +174,49 @@ In this section I go through some of the work I did in the original version of t
 
 #### Figure H ####
 
-[unpruned r](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/aim%20r%20unpruned.png)
+![unpruned r](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/aim%20r%20unpruned.png)
 
 Figure H shows unpruned tree from all of the variables
 
 #### Figure I ####
 
-[cp pruning r 1](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/aim%20r%20cp%20pruning.png)
+![cp pruning r 1](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/aim%20r%20cp%20pruning.png)
 
 Figure I shows the cp values in a slightly different format than before, but still used for pruning in the same way
 
 #### Figure J ####
 
-[R pruned](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/aim%20r%20pruned.png)
+![R pruned](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/aim%20r%20pruned.png)
 
 Figure J Shows the pruned tree. This tree also decided which variables it thought were most important.
 
 #### Figure K ####
 
-[var importance](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/r%20aim%20importances.png)
+![var importance](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/r%20aim%20importances.png)
 
 Figure K shows the variables deemed important by the pruned tree
 
 #### Figure L ####
 
-[imp plot](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/r%20aim%20importances%20plot.png)
+![imp plot](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/r%20aim%20importances%20plot.png)
 
 Figure L shows relative importance of the previous variables to show just how much more important some are then others
 
 #### Figure M ####
 
-[unprune revised](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/unpruned%20revised%20r%20aim.png)
+![unprune revised](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/unpruned%20revised%20r%20aim.png)
 
 Figure M shows a new unpruned tree made using only the top most important variables gleaned from last model
 
 #### Figure N ####
 
-[cp selection 2](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/r%20cp%20pruning%20aim.png)
+![cp selection 2](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/r%20cp%20pruning%20aim.png)
 
 Figure N shows cp values for pruning of this tree
 
 #### Figure O ####
 
-[Revised tree 2](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/r%20pruned%20aim%20revised.png)
+![Revised tree 2](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/r%20pruned%20aim%20revised.png)
 
 Figure O shows the new pruned tree
 
@@ -253,7 +253,7 @@ Figure P is a confusion matrix. Top left number is how many patients were accura
 
 #### Figure Q ####
 
-[decision tree ROC](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/decision%20tree%20aim%20ROC%20curve.png)
+![decision tree ROC](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/decision%20tree%20aim%20ROC%20curve.png)
 
 Figure Q is the ROC curve for the decision tree .The roc curve shows the proportion of true positives to false positives. This is best when hugging the left wall and ceiling. As it stands the false positive rate increases with the true positive rate increases faster than the false until about .67 true positive then false positive starts increasing faster, somewhat negating any further increases in true positive. this makes the .67 somewhat optimal
 
@@ -291,7 +291,7 @@ The closer this curve is to hugging the left wall and ceiling, the better the sc
    
 #### Figure S ####
 
-[Feature elim](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/Feature%20elim%20aim%20plot.png)
+![Feature elim](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/Feature%20elim%20aim%20plot.png)
 
 Figure S shows the accuracies yielded by each feature subset gone through by RFECV, to illustrate how it chose 460 features. The general trend can be seen to increase until around 18 rounds of feature elimination (around 450 features eliminated, since 25 features are eliminated in each round) then starts to decrease a bit. If I were eliminating features by hand I'd have probably eliminated more as the general trend does not drop by that much, to achieve the very highest accuracy possible it is okay for the model to have just stopped at the highest accuracy
 
