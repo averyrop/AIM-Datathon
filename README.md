@@ -37,6 +37,8 @@ Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5
 * [Conclusion](#Conclusion)
 * [Solution Video](#Solution-Video)
 
+Each of the headers that correspond to a header in the google collab link to the header in the colab, for reference.
+
 
 #### Problem
 -  Provided with the dataset from the Roswell Park DataBank and BioRepository Shared Resource, we teams were tasked with predicting patient survival outcomes.
@@ -53,33 +55,31 @@ Link to Google Colab: https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6m
 #### [Data-Management](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=mMZZXXuhVyok)
 
 
-#####Data Preprocessing
+##### [Data Preprocessing](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=BMc0gDb7uJ9A)
 
 Revised model preprocessing.
 
-##### Dataframe Combination
+##### [Dataframe Combination](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=oS17yqw_AGrr)
 
  Change all columns to uppercase 
  Merge all columns. 
  Consolidate test and training columns into unified columns, so they're identified as the same variable.
 
-##### Dealing with null values
+##### [Dealing with null values](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=RtuW8MzSAOGK)
 
  Eliminate columns with high ratio of blank responses
  Fill columns with low ratios of blank repsonses with most frequent response (as the unanswered columns were categorical)
       
-##### Recombining test and train
+##### [Recombining test and train](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=2FH_U1nTCaBn)
 
 Recombine columns separated during previous transformation steps
 
 
-#### Study-Design
+#### [Study-Design](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=2u5ybW9ROhRy)
 
-
-[Link](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=2u5ybW9ROhRy)
 
 The clinical goal of this analysis was prediction of cancer patient survival. In the pursuit of this, the nearly 1200 pieces of data surrounding every patient were provided. This is too many to explore all of, but an exploration of some of these variables will be performed here to show the design, biases, and implications of this study. Only the data with the classes associated are explored, as these are the samples that influence the creation of the model.
-##### Survival proportions(#Survival-proportions)
+##### [Survival proportions](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=Nl7iYWBVGFqW)
 
 #### Figure A ####
 
@@ -88,7 +88,7 @@ The clinical goal of this analysis was prediction of cancer patient survival. In
 
 The first variable explored is the patient survival itself. As can be seen in Figure A, 60% of the patients survived, meaning that if there are no other factors interacting, when exploring other variables, We should see that same 60:40 split when splitting the variable based on survival
 
-##### Race proportions(#Race-proportions)
+##### [Race proportions](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=Vluyqb5PGV4o)
 
 #### Figure B ####
 
@@ -97,7 +97,7 @@ The first variable explored is the patient survival itself. As can be seen in Fi
 
 Looking at Figure B, we can see the distribution of ages used in the study. The ages are normally distributed but upon inspection it appears that there are two separate normal distribtions. One at about 60 for the survivors (blue) one at 70 for the dead (red). This is indicative of age being useful in predicting the patient status.
 
-##### Age spread(#Age-spread)
+##### [Age spread](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=UBlvBllxGbRP)
 
 #### Figure C ####
 
@@ -106,7 +106,7 @@ Looking at Figure B, we can see the distribution of ages used in the study. The 
 
 This image shows the races used in this study. Race 1 is the stand in for white, and race 2 is the stand in for black. The others are translated in the google collab, but aren't really  necessary here to point out that a vast majority of the patients used in this study were white. As a result the results are not necessarily applicable to patients of different races. We also won't really be able to tell if race helps predict the survival status, as theres not enough data about other races to make an informed decision.
 
-##### Income spread
+##### [Income spread](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=pFhM-8VjGeeX)
 
 #### Figure D ####
 
@@ -115,37 +115,34 @@ This image shows the races used in this study. Race 1 is the stand in for white,
 
 The last variable shows annual incomes of patients split based on patient survival. The phenomenon seen in the age histogram is not seen here. For patients who make under 25k per year, the red line is higher than or even with the the blue line, while with the patients who make above 25k the blue line is much higher. This suggests that income has some relation to the survival status.
 
-#### Train and Test Data Pre-processing](#Train-and-Test-Data-Pre-processing)
+#### [Train and Test Data Pre-processing](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=nLiBxFLfv_9W)
 
-#####   Encode
+#####   [Encode](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=4JbAFQKmY0wQ)
 
 Encode non numerical columns
-#####   Scale
+#####   [Scale](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=9nXmFsqGY3az)
 
 Scale all columns, now numerical (subtract mean and divide by standard deviation)
 
-#####  Homogeneity check
+#####  [Homogeneity check](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=o7IihDpRZZmm)
 
 Eliminate homogeneous columns (too many of the same answer)
 
-#####   Separate training data
+#####   [Separate training data](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=AeD4_3Z4ayIV)
 
 Separate class associated data for use in modelling
 
 
-#### Test-Train-Validation-Strategies 
-
-[Link](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=uu4SxE7ZDUW3)
+#### [Test-Train-Validation-Strategies ](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=uu4SxE7ZDUW3)
 
 Recursive feature elimination with cross validation (RFECV) was used to tune the model. While this may seem to be better suited to be in the model tuning section, it is also related to the test train split. The entire class associated set of 1600 patients were taken for the model. 80% of these were then chosen as a training set (1280). This training set was then used with RFECV and random forests to eliminate unimportant columns from the dataframe fed in. RFECV used cross validation to split the training set into 5 subsets. A model was trained using 4 of the subsets in a random forest and was then checked for accuracy on the 5th subset. This was repeated until every subset got a turn to be the accuracy check set, and then all of the accuracies were averaged. This whole process was then repeated after eliminating 25 columns that were deemed unimportant. This process started at about 1000 columns and was then repeated until about 500 columns remained, all deemed to be important. This was based on the subsequent accuracies of the cross validations reaching an optimal number. 
 
 So to summarize there are 5 different cross validating sub-training sets, followed by a training set of 1280 used to train the model, followed by an overall training set of 1600, which are the patients which our team was provided class labels for. Similarly there are also 5 cross validating test subsets, followed by a test set of 320 to test the model on, followed by the overall test set of 400 un class labeled patients, which are used to score the kaggle submission in the end.
 
-#### Model-Training_and_Tuning
+#### [Model-Training_and_Tuning](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=MT5GcIpH4GdA)
 
-[Link](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=MT5GcIpH4GdA)
 
-##### Decision Tree Model Training
+##### [Decision Tree Model Training](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=WZtUWKdC5LrF)
 
 A decision tree was grown and pruned using the training data. 
 
@@ -166,7 +163,7 @@ Figure G shows the new pruned model. It is a lot more manageable than the unprun
 While some of the variables were lost in translation (can be translated yourself by looking through the DBBR survey file in the data) they mostly correspond to:
 'Days per week of exercise at 45 years', 'Days per week taking acetylsalicylic acid', 'Had abnormal breast biopsy results', 'Diet soda serving size', 'Age first smoked', 'Age last smoked', 'Brand smoked most recently tar', 'Prior brand smoked most filter', 'How often did you eat milk on cereal', 'Year of Birth', 'Household income
 
-###### Appendix (Previous decision tree models)
+###### [Appendix (Previous decision tree models)](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=3EgIPqBQzCVC)
 
 In this section I go through some of the work I did in the original version of this project. It was originally done in R, and was riddled with mistakes, but for posterity the decsion trees made back then are shown here.
 
@@ -204,7 +201,7 @@ Figure O shows the new pruned tree
 
 
       
-##### Random Forest Model Training
+##### [Random Forest Model Training](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=_bVK08J25T6J)
 
 A random forest model was used for the patient status predictions. This random forest used 200 trees with a max depth of 3. While this was a somewhat lower amount than I might usually use, the accuracy presented at the end was good enough that I feel it was okay, since increasing the number of trees and the depth would have increased the amount of time to wait for the results.
 
@@ -216,12 +213,10 @@ Here I will also discuss the strategy revision from the initial version of team 
 
 Since they both have similar accuracy I figured that these reasons were good enough to choose one over the other.
 
-#### Results_Model-Performance_and_Interpretability
-
-[Link](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=9Avhzg93Dxvg)
+#### [Results_Model-Performance_and_Interpretability](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=9Avhzg93Dxvg)
 
 
-##### [Decision Tree Results](#Decision-Tree-Results)
+##### [Decision Tree Results](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=LMOhPjli4gWr)
 
 The pruned tree is used here to predict the test set. the ROC AUC score achieved from this is .74. The following visualizations reinforce this.
 
@@ -239,7 +234,7 @@ Figure P is a confusion matrix. Top left number is how many patients were accura
 
 Figure Q is the ROC curve for the decision tree .The roc curve shows the proportion of true positives to false positives. This is best when hugging the left wall and ceiling. As it stands the false positive rate increases with the true positive rate increases faster than the false until about .67 true positive then false positive starts increasing faster, somewhat negating any further increases in true positive. this makes the .67 somewhat optimal
 
-##### [Random Forest Results](#Random-Forest-Results)
+##### [Random Forest Results](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=e6ZYz7Hl4xAC)
 
 The results of RFECV random forest model were tested on set aside test set of 320 patients. The ROC_AUC score, the ROC curve, and a confusion matrix will be shown to illustrate the results. For interpretability, the variables/ questions associated with them that were selected by the feature selection will be summarized. A somewhat fuller account can be seen by visiting the colab, link mentioned earlier.
 
@@ -268,7 +263,7 @@ The actual ROC curve is shown here
 The closer this curve is to hugging the left wall and ceiling, the better the score is, while appearing as a diagonal line from bottom left to top right is bad.
 
 
-##### [Feature Importance](#Feature-Importance)
+##### [Feature Importance](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=Ur-mgVWK2QKv)
    
    
 #### Figure S ####
