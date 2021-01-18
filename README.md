@@ -93,7 +93,7 @@ The first variable explored is the patient survival itself. As can be seen in Fi
 #### Figure B ####
 
 ##### Age Breakdown #####
-![Age image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/Age%20hist.png)
+![Age image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/new%20age%20plot.png)
 
 Looking at Figure B, we can see the distribution of ages used in the study. The ages are normally distributed but upon inspection it appears that there are two separate normal distribtions. One at about 60 for the survivors (blue) one at 70 for the dead (red). This is indicative of age being useful in predicting the patient status.
 
