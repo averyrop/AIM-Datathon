@@ -15,24 +15,24 @@ Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5
       * [Dealing with null values](#Dealing-with-null-values)
       * [Recombining test and train](#Recombining-test-and-train)
 * [Study Design](#Study-Design) 
-   * Survival proportions(#Survival-proportions)
-   * Race proportions(#Race-proportions)
-   * Age spread(#Age-spread)
-   * Income spread(#Income-spread)
-* Train and Test Data Pre-processing
-   * Encode
-   * Scale
-   * Homogeneity check
-   * Separate training data
+   * [Survival proportions](#Survival-proportions)
+   * [Race proportions](#Race-proportions)
+   * [Age spread](#Age-spread)
+   * [Income spread](#Income-spread)
+* [Train and Test Data Pre-processing](#Train-and-Test-Data-Pre-processing)
+   * [Encode](#Encode)
+   * [Scale](#Scale)
+   * [Homogeneity check](#homogeneity-check)
+   * [Separate training data](#Separate-training-data)
 * [Test-train-Validation_Strategies](#Test-Train-Validation-Strategies)
 * [Model Training and Tuning](#Model-Training_and_Tuning)
-   * Decision Tree Model Training
-      *Appendix (Previous decision tree models)
-   * Random Forest Model Training
+   * [Decision Tree Model Training](#Decision-Tree-Model-Training)
+      * [Appendix (Previous decision tree models)](#Appendix-(Previous-decision-tree-models))
+   * [Random Forest Model Training](#Random-Forest-Model-Training)
 * [Results,Model Performance,Interpretability](#Results_Model-Performance_and_Interpretability)
-   * Decision Tree Results
-   * Random Forest Results
-   * Feature Importance
+   * [Decision Tree Results](#Decision-Tree-Results)
+   * [Random Forest Results](#Random-Forest-Results)
+   * [Feature Importance](#Feature-Importance)
       
 * [Conclusion](#Conclusion)
 * [Solution Video](#Solution-Video)
@@ -50,9 +50,8 @@ Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5
 
 Link to Google Colab: https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing
 
-#### Data-Management
+#### [Data-Management](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=mMZZXXuhVyok)
 
-[Link](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=mMZZXXuhVyok)
 
 #####Data Preprocessing
 
@@ -73,9 +72,6 @@ Revised model preprocessing.
 
 Recombine columns separated during previous transformation steps
 
-6. Encode non numerical columns
-7. Scale all columns, now numerical (subtract mean and divide by standard deviation)
-8. Eliminate homogeneous columns (too many of the same answer)
 
 #### Study-Design
 
@@ -119,8 +115,22 @@ This image shows the races used in this study. Race 1 is the stand in for white,
 
 The last variable shows annual incomes of patients split based on patient survival. The phenomenon seen in the age histogram is not seen here. For patients who make under 25k per year, the red line is higher than or even with the the blue line, while with the patients who make above 25k the blue line is much higher. This suggests that income has some relation to the survival status.
 
+#### Train and Test Data Pre-processing](#Train-and-Test-Data-Pre-processing)
 
+#####   Encode
 
+Encode non numerical columns
+#####   Scale
+
+Scale all columns, now numerical (subtract mean and divide by standard deviation)
+
+#####  Homogeneity check
+
+Eliminate homogeneous columns (too many of the same answer)
+
+#####   Separate training data
+
+Separate class associated data for use in modelling
 
 
 #### Test-Train-Validation-Strategies 
@@ -135,9 +145,70 @@ So to summarize there are 5 different cross validating sub-training sets, follow
 
 [Link](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=MT5GcIpH4GdA)
 
+##### Decision Tree Model Training
+
+A decision tree was grown and pruned using the training data. 
+
+#### Figure E ####
+
+Figure E shows the unpruned tree. There are too many branches to try to make any sense of it, and it wouldn't be prudent to try as in it's current state it overfits the data
+
+
+#### Figure F ####
+
+Cp values are plotted against accuracies in figure F in order to see how many branches we should trim in order to receive as high accuracy as we can while also making the plot as readable as possible. Higher cps mean simpler models
+
+#### Figure G ####
+
+Figure G shows the new pruned model. It is a lot more manageable than the unpruned version. The variables deemed important are: 
+'BETA-CRYPTOXANTHIN','XDAYS45','ACTLDAYS','VB12DOS','BBPSYRES','DSODASV','AGESTART','AGEQUIT','BRND1TAR','BRND2FIL','MILKC','DOBYEAR','HHINC','SEERSUMMSTAGE2000_x'.
+
+While some of the variables were lost in translation (can be translated yourself by looking through the DBBR survey file in the data) they mostly correspond to:
+'Days per week of exercise at 45 years', 'Days per week taking acetylsalicylic acid', 'Had abnormal breast biopsy results', 'Diet soda serving size', 'Age first smoked', 'Age last smoked', 'Brand smoked most recently tar', 'Prior brand smoked most filter', 'How often did you eat milk on cereal', 'Year of Birth', 'Household income
+
+###### Appendix (Previous decision tree models)
+
+In this section I go through some of the work I did in the original version of this project. It was originally done in R, and was riddled with mistakes, but for posterity the decsion trees made back then are shown here.
+
+#### Figure H ####
+
+Figure H shows unpruned tree from all of the variables
+
+#### Figure I ####
+
+Figure I shows the cp values in a slightly different format than before, but still used for pruning in the same way
+
+#### Figure J ####
+
+Figure J Shows the pruned tree. This tree also decided which variables it thought were most important.
+
+#### Figure K ####
+
+Figure K shows the variables deemed important by the pruned tree
+
+#### Figure L ####
+
+Figure L shows relative importance of the previous variables to show just how much more important some are then others
+
+#### Figure M ####
+
+Figure M shows a new unpruned tree made using only the top most important variables gleaned from last model
+
+#### Figure N ####
+
+Figure N shows cp values for pruning of this tree
+
+#### Figure O ####
+
+Figure O shows the new pruned tree
+
+
+      
+##### Random Forest Model Training
+
 A random forest model was used for the patient status predictions. This random forest used 200 trees with a max depth of 3. While this was a somewhat lower amount than I might usually use, the accuracy presented at the end was good enough that I feel it was okay, since increasing the number of trees and the depth would have increased the amount of time to wait for the results.
 
-Here I will also discuss the strategy revision from the initial version of team 5's project from November to now. Back in November A decision tree was used alongside boosting to predict the patient outcomes. During the initial attempt the school year was still going, so I was still experimenting with new methods. The decision tree was chosen for it's interpretability and the boosting was chosen for acurracy. best subset selection was also used, on the basis of a chi squared test. This time only a random forest was done alongside the RFECV explained in the last section. The decision tree was omitted as random forest typically has better accuracy. Random forest was chosen instead of boosting somewhat on a whim. They both have comparable accuracy, but the boosting builds on itself to better predict the harder samples that previous trees in the ensemble couldn't predict. In comparison the random forest just randomly uses a subset of features in each tree in the ensemble to predict the outcome. The decision was made based on 
+Here I will also discuss the strategy revision from the initial version of team 5's project from November to now. Random forest was chosen instead of boosting somewhat on a whim. They both have comparable accuracy, but the boosting builds on itself to better predict the harder samples that previous trees in the ensemble couldn't predict. In comparison the random forest just randomly uses a subset of features in each tree in the ensemble to predict the outcome. The decision was made based on 
 
 1. The fact that I was subconciously afraid that the boosting model might overfit just a bit more than the random forest would, even though they're robust against overfitting
 2. The fact that I recently used boosting in a different project and wanted to showcase a different technique here.
@@ -149,6 +220,27 @@ Since they both have similar accuracy I figured that these reasons were good eno
 
 [Link](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=9Avhzg93Dxvg)
 
+
+##### [Decision Tree Results](#Decision-Tree-Results)
+
+The pruned tree is used here to predict the test set. the ROC AUC score achieved from this is .74. The following visualizations reinforce this.
+
+#### Figure P ####
+
+##### Confusion Matrix #####
+Confusion     | Matrix
+------------- | -------------
+   64         |      54
+   40         |     162
+   
+Figure P is a confusion matrix. Top left number is how many patients were accurately predicted as dead, and bottom left is the same for alive. More numbers in these positions are good.
+
+#### Figure Q ####
+
+Figure Q is the ROC curve for the decision tree .The roc curve shows the proportion of true positives to false positives. This is best when hugging the left wall and ceiling. As it stands the false positive rate increases with the true positive rate increases faster than the false until about .67 true positive then false positive starts increasing faster, somewhat negating any further increases in true positive. this makes the .67 somewhat optimal
+
+##### [Random Forest Results](#Random-Forest-Results)
+
 The results of RFECV random forest model were tested on set aside test set of 320 patients. The ROC_AUC score, the ROC curve, and a confusion matrix will be shown to illustrate the results. For interpretability, the variables/ questions associated with them that were selected by the feature selection will be summarized. A somewhat fuller account can be seen by visiting the colab, link mentioned earlier.
 
 The internal ROC AUC score (Calculated based on my set aside test set of 320) was .76. 
@@ -156,7 +248,7 @@ The internal ROC AUC score (Calculated based on my set aside test set of 320) wa
 The AUC score is related to the numbers of true and false positives and negatives in the predicted data. The confusion matrix looks like this:
 
 
-#### Figure E ####
+#### Figure R ####
 
 ##### Confusion Matrix #####
 Confusion     | Matrix
@@ -168,12 +260,20 @@ Confusion     | Matrix
 More numbers along the diagonal is good, and this is another way to look at/ interpret the ROC AUC score given above.
 The actual ROC curve is shown here
 
-#### Figure F ####
+#### Figure S ####
 
 ##### ROC curve #####
 ![ROC image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/datathon%20ROC%20curve.png)
 
 The closer this curve is to hugging the left wall and ceiling, the better the score is, while appearing as a diagonal line from bottom left to top right is bad.
+
+
+##### [Feature Importance](#Feature-Importance)
+   
+   
+#### Figure S ####
+
+Figure S shows the accuracies yielded by each feature subset gone through by RFECV, to illustrate how it chose 460 features. The general trend can be seen to increase until around 18 rounds of feature elimination (around 450 features eliminated, since 25 features are eliminated in each round) then starts to decrease a bit. If I were eliminating features by hand I'd have probably eliminated more as the general trend does not drop by that much, to achieve the very highest accuracy possible it is okay for the model to have just stopped at the highest accuracy
 
 The questions used to diagnose the survival can be grouped into the following categiries:
 
@@ -182,8 +282,7 @@ The questions used to diagnose the survival can be grouped into the following ca
 3. Medications (ibuprofen, antacids)
 4. Misc (e.g. age diagnosed, lithocode, workout, income)
 
-While this is a very broad approximation, there were around 230 features deemed important, so I can't summarize them all here. Again, the google collab can be referenced,
-and the important features can be seen in the feature importance section
+While this is a very broad approximation, there were around 230 features deemed important, so I can't summarize them all here, but the google colab can be referenced for a more thorough viewing.
 
 
 #### Conclusion
