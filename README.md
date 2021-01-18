@@ -10,15 +10,15 @@ Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5
 * [Solution](#solution)
 * [ML Pipeline](#ml-pipeline)
 * [Data Management](#data-management)
-   * Data Preprocessing(#data-preprocessing)
-      * Dataframe combination
-      * Dealing with null values
-      * Recombining test and train
+   * [Data Preprocessing](#data-preprocessing)
+      * [Dataframe combination](#Dataframe-combination)
+      * [Dealing with null values](#Dealing-with-null-values)
+      * [Recombining test and train](#Recombining-test-and-train)
 * [Study Design](#Study-Design) 
-   * Survival proportions
-   * Race proportions
-   * Age spread
-   * Income spread
+   * Survival proportions(#Survival-proportions)
+   * Race proportions(#Race-proportions)
+   * Age spread(#Age-spread)
+   * Income spread(#Income-spread)
 * Train and Test Data Pre-processing
    * Encode
    * Scale
@@ -58,34 +58,50 @@ Link to Google Colab: https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6m
 
 Revised model preprocessing.
 
-1. Change all columns to uppercase 
-2. Merge all columns. 
-3. Consolidate test and training columns into unified columns, so they're identified as the same variable.
-4. Eliminate columns with high ratio of blank responses
-5. Fill columns with low ratios of blank repsonses with most frequent response (as the unanswered columns were categorical)
+##### Dataframe Combination
+
+ Change all columns to uppercase 
+ Merge all columns. 
+ Consolidate test and training columns into unified columns, so they're identified as the same variable.
+
+##### Dealing with null values
+
+ Eliminate columns with high ratio of blank responses
+ Fill columns with low ratios of blank repsonses with most frequent response (as the unanswered columns were categorical)
+      
+##### Recombining test and train
+
+Recombine columns separated during previous transformation steps
+
 6. Encode non numerical columns
 7. Scale all columns, now numerical (subtract mean and divide by standard deviation)
 8. Eliminate homogeneous columns (too many of the same answer)
 
 #### Study-Design
 
+
 [Link](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=2u5ybW9ROhRy)
 
 The clinical goal of this analysis was prediction of cancer patient survival. In the pursuit of this, the nearly 1200 pieces of data surrounding every patient were provided. This is too many to explore all of, but an exploration of some of these variables will be performed here to show the design, biases, and implications of this study. Only the data with the classes associated are explored, as these are the samples that influence the creation of the model.
+##### Survival proportions(#Survival-proportions)
 
 #### Figure A ####
 
 ##### Survival Breakdown #####
 ![Survival image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/Survival%20pie.png)
 
-The first variable explored is the patient survival itself. As can be seen in the pie chart below, 60% of the patients survived, meaning that if there are no other factors interacting, when exploring other variables, We should see that same 60:40 split when splitting the variable based on survival
+The first variable explored is the patient survival itself. As can be seen in Figure A, 60% of the patients survived, meaning that if there are no other factors interacting, when exploring other variables, We should see that same 60:40 split when splitting the variable based on survival
+
+##### Race proportions(#Race-proportions)
 
 #### Figure B ####
 
 ##### Age Breakdown #####
 ![Age image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/Age%20hist.png)
 
-The next variable explored is age. The 60:40 split can be seen here between the red and the blue, as the blue bars look basically like the red bars, just about 1.5x times taller. This shows that age is not visually noticeable for the most part as indicator of patient survival. It also shows that an approximately normal distribution of patient ages were acquired with a mean of about 62.
+Looking at Figure B, we can see the distribution of ages used in the study. The ages are normally distributed but upon inspection it appears that there are two separate normal distribtions. One at about 60 for the survivors (blue) one at 70 for the dead (red). This is indicative of age being useful in predicting the patient status.
+
+##### Age spread(#Age-spread)
 
 #### Figure C ####
 
@@ -94,6 +110,7 @@ The next variable explored is age. The 60:40 split can be seen here between the 
 
 This image shows the races used in this study. Race 1 is the stand in for white, and race 2 is the stand in for black. The others are translated in the google collab, but aren't really  necessary here to point out that a vast majority of the patients used in this study were white. As a result the results are not necessarily applicable to patients of different races. We also won't really be able to tell if race helps predict the survival status, as theres not enough data about other races to make an informed decision.
 
+##### Income spread
 
 #### Figure D ####
 
