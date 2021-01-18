@@ -10,10 +10,30 @@ Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5
 * [Solution](#solution)
 * [ML Pipeline](#ml-pipeline)
 * [Data Management](#data-management)
+   * Data Preprocessing(#data-preprocessing)
+      * Dataframe combination
+      * Dealing with null values
+      * Recombining test and train
 * [Study Design](#Study-Design) 
-* [Validation Strategies (Train and Test Data Pre-processing, Training/Validation Split)](#Test-Train-Validation-Strategies)
-* [Model Training,Tuning (Random Forest/ RFECV)](#Model-Training_and_Tuning)
+   * Survival proportions
+   * Race proportions
+   * Age spread
+   * Income spread
+* Train and Test Data Pre-processing
+   * Encode
+   * Scale
+   * Homogeneity check
+   * Separate training data
+* [Test-train-Validation_Strategies](#Test-Train-Validation-Strategies)
+* [Model Training and Tuning](#Model-Training_and_Tuning)
+   * Decision Tree Model Training
+      *Appendix (Previous decision tree models)
+   * Random Forest Model Training
 * [Results,Model Performance,Interpretability](#Results_Model-Performance_and_Interpretability)
+   * Decision Tree Results
+   * Random Forest Results
+   * Feature Importance
+      
 * [Conclusion](#Conclusion)
 * [Solution Video](#Solution-Video)
 
@@ -33,6 +53,8 @@ Link to Google Colab: https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6m
 #### Data-Management
 
 [Link](https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing#scrollTo=mMZZXXuhVyok)
+
+#####Data Preprocessing
 
 Revised model preprocessing.
 
