@@ -1,6 +1,6 @@
 ## Project Title: Roswell Park's DBBR Cancer Patient Survival Prediction
 
-Team Members: Avery Roper
+Team Members: Avery Roper,  aimsymposium@gmail.com
 
 Link to AIM Datathon: https://www.kaggle.com/c/aimdatathon2020/leaderboard <br>
 Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing
