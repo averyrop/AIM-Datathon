@@ -48,7 +48,7 @@ Each of the headers that correspond to a header in the google collab link to the
 
 #### ML-Pipeline
 
-![Pipe image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/MLpipeline%20(2).png)
+![Pipe image](https://github.com/averyrop/Roswell-Park-s-DBBR-Cancer-Patient-Survival-Prediction-/blob/main/pipeline.png)
 
 Link to Google Colab: https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing
 
