@@ -4,6 +4,7 @@ Team Members: Avery Roper,  aimsymposium@gmail.com
 
 Link to AIM Datathon: https://www.kaggle.com/c/aimdatathon2020/leaderboard <br>
 Link to Google Collab Notebook: https://colab.research.google.com/drive/1U9w9gz5ANz1qX-a6mlZQuvpBReR_zXuk?usp=sharing
+Linke to the Youtube Video: https://youtu.be/dbxw6AHQf98
 ### Contents
 
 * [Problem](#problem)
